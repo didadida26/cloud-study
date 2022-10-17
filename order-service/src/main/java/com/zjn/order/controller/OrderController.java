@@ -2,10 +2,7 @@ package com.zjn.order.controller;
 
 import com.zjn.order.pojo.Order;
 import com.zjn.order.service.OrderService;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -13,16 +10,15 @@ import javax.annotation.Resource;
  * @author zjn
  * @date 2022/10/16 上午11:12
  */
-@Controller
+@RestController
 @RequestMapping("/order")
-@ResponseBody
 public class OrderController {
 
     @Resource
     private OrderService orderService;
 
-    @RequestMapping("/{id}}")
-    public Order findById(@PathVariable Long id){
-        return orderService.findById(id);
+    @GetMapping("/{orderId}")
+    public Order findById(@PathVariable("orderId") Long orderId) {
+        return orderService.findById(orderId);
     }
 }

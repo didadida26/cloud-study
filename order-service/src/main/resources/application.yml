@@ -1,17 +1,41 @@
 server:
-  port: 8081
+  port: 8083
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/test
     username: root
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver
+  application:
+    name: orderservice
+  # nacos
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+      discovery:
+        cluster-name: beijing
+  #        namespace: 60d6483b-1109-4833-823c-36c819438ed5 # 命名空间 不填写默认public
+
+  # 负载均衡规则 轮询
+userservice:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule
+
 mybatis:
   #  type-aliases-package: cn.itcast.user.pojo
   configuration:
     map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 logging:
   level:
     cn.itcast: debug
   pattern:
     dateformat: MM-dd HH:mm:ss:SSS
+
+# eureka configuration
+
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://127.0.0.1:10086/eureka
+

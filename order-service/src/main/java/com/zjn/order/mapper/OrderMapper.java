@@ -9,8 +9,8 @@ import com.zjn.order.pojo.Order;
 public interface OrderMapper {
     /**
      * 根据id查找
-     * @param id
+     * @param orderId
      * @return
      */
-    Order findById(Long id);
+    Order findById(Long orderId);
 }

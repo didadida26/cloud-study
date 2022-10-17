@@ -36,6 +36,8 @@ public class Order implements Serializable {
      */
     private Integer num;
 
+    private User user;
+
     private static final long serialVersionUID = 1L;
 
 

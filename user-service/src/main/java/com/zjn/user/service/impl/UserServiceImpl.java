@@ -3,9 +3,8 @@ package com.zjn.user.service.impl;
 import com.zjn.user.mapper.UserMapper;
 import com.zjn.user.pojo.User;
 import com.zjn.user.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import javax.annotation.Resource;
 
 /**
  * @author zjn
@@ -14,7 +13,7 @@ import javax.annotation.Resource;
 @Service("userService")
 public class UserServiceImpl implements UserService {
 
-    @Resource
+    @Autowired
     private UserMapper userMapper;
     /**
      * 根据柴查询
