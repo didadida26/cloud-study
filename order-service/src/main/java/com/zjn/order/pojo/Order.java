@@ -1,5 +1,6 @@
 package com.zjn.order.pojo;
 
+import com.zjn.feign.pojo.User;
 import lombok.Data;
 
 import java.io.Serializable;
